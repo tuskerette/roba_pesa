@@ -1,0 +1,19 @@
+<h1>Roba Pesa</h1>
+<%= link_to "New Entry", new_entry_path %>
+<% if flash[:success].present? %>
+  <p><b><%= flash[:success] %></b></p>
+<% end %>
+
+<ul>
+  <% @entries.each do |entry| %>
+    <li>
+      <%= entry.created_at %>: <b><%= entry.kg %> kg</b> -
+			<button>
+				<%= link_to "Destroy", entry_path(entry), data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "Are you sure?"
+                  } %>
+			</button>
+    </li>
+  <% end %>
+</ul>
