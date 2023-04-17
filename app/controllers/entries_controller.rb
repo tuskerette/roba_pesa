@@ -1,9 +1,9 @@
 class EntriesController < ApplicationController
   def index
-		@entries = Entry.all
+    @entries = Entry.all
   end
 
-	def new
+  def new
     @entry = Entry.new
   end
 
@@ -11,22 +11,22 @@ class EntriesController < ApplicationController
     @entry = Entry.new(entry_params)
 
     if @entry.save
-      redirect_to root_path, :flash => { :success => "Entry saved!" }
+      redirect_to root_path, flash: { success: "Entry saved!" }
     else
       render :new, status: :unprocessable_entity
     end
   end
 
-	def destroy
+  def destroy
     @entry = Entry.find(params[:id])
     @entry.destroy
 
     redirect_to root_path, status: :see_other
   end
 
-	private
+  private
 
-	def entry_params
+  def entry_params
     params.require(:entry).permit(:kg)
-	end
+  end
 end
