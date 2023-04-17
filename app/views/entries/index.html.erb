@@ -8,12 +8,12 @@
   <% @entries.each do |entry| %>
     <li>
       <%= entry.created_at %>: <b><%= entry.kg %> kg</b> -
-			<button>
-				<%= link_to "Destroy", entry_path(entry), data: {
+      <button>
+        <%= link_to "Destroy", entry_path(entry), data: {
                     turbo_method: :delete,
                     turbo_confirm: "Are you sure?"
                   } %>
-			</button>
+      </button>
     </li>
   <% end %>
 </ul>

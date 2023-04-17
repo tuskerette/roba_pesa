@@ -4,9 +4,9 @@
   <div>
     <%= form.label :kg %><br>
     <%= form.text_field :kg %>
-		<% @entry.errors.full_messages_for(:kg).each do |message| %>
+    <% @entry.errors.full_messages_for(:kg).each do |message| %>
       <div><%= message %></div>
-		<% end %>
+    <% end %>
   </div>
 
   <div>
