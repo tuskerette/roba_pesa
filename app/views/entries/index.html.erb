@@ -4,6 +4,9 @@
   <p><b><%= flash[:success] %></b></p>
 <% end %>
 
+<%= line_chart Entry.pluck(:created_at, :kg), min: 60, max: 70, height: "400px" %>
+
+
 <ul>
   <% @entries.each do |entry| %>
     <li>
