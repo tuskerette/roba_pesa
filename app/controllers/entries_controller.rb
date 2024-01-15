@@ -27,6 +27,6 @@ class EntriesController < ApplicationController
   private
 
   def entry_params
-    params.require(:entry).permit(:kg)
+    params.require(:entry).permit(:kg, :period)
   end
 end

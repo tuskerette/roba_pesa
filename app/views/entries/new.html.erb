@@ -1,13 +1,19 @@
 <h1>New Entry</h1>
 
 <%= form_with model: @entry do |form| %>
-  <div>
-    <%= form.label :kg %><br>
+  <p>
+    <%= form.label :kg %>
     <%= form.text_field :kg %>
+  </p>
+  <p>
+    <%= form.label :period %>
+    <%= form.check_box :period %>
+  </p>
+  <p>
     <% @entry.errors.full_messages_for(:kg).each do |message| %>
       <div><%= message %></div>
     <% end %>
-  </div>
+  </p>
 
   <div>
     <%= form.submit %>

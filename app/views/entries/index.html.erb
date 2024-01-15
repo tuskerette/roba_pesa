@@ -6,10 +6,10 @@
 
 <%= line_chart Entry.pluck(:created_at, :kg), min: 60, max: 70, height: "400px" %>
 
-
 <ul>
-  <% @entries.each do |entry| %>
+  <% @entries.order(created_at: :desc).each do |entry| %>
     <li>
+      <%= entry.period ? "💃🏻" : "" %>
       <%= entry.created_at %>: <b><%= entry.kg %> kg</b> -
       <button>
         <%= link_to "Destroy", entry_path(entry), data: {
