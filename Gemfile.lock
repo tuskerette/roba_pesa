@@ -92,6 +92,11 @@ GEM
       reline (>= 0.3.1)
     diff-lcs (1.5.0)
     erubi (1.12.0)
+    factory_bot (6.4.5)
+      activesupport (>= 5.0.0)
+    factory_bot_rails (6.4.3)
+      factory_bot (~> 6.4)
+      railties (>= 5.0.0)
     globalid (1.1.0)
       activesupport (>= 5.0)
     groupdate (6.2.1)
@@ -281,6 +286,7 @@ DEPENDENCIES
   capybara
   chartkick
   debug
+  factory_bot_rails
   groupdate
   importmap-rails
   jbuilder
