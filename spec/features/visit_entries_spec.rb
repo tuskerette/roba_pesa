@@ -8,7 +8,10 @@ RSpec.describe 'Visit entry index', type: :feature do
 		expect(page).to have_content("#{entry.kg}")
 	end
 
-	xit "shows the line chart with the entries" do
+	it "shows the line chart with the entries" do
+		entry = create(:entry)
+		visit entries_path
+		expect(page).to have_selector(:id, "chart-1")
 	end
 
 	it "destroys an entry", js: true do
